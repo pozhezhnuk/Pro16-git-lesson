@@ -1,19 +1,18 @@
-#this is name of all jobson github
+# this is name of all jobs on github actions bot
 name: "Build and push to dev branch"
 
-
-#param which describe main repository
+# param which describe main repository
 on:
   push:
-    branches: 
-      -"main"
+    branches:
+      - "main"
 
-#only for a create and edditing
-permissions: 
-   contents: write
+# only for a creation and editing new branches during auto-mode process
+permissions:
+  contents: write
 
-jobs: 
-  build-and-deploy
+jobs:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -34,7 +33,7 @@ jobs:
 
       - name: Commit and push to dev
         env:
-          PAT: ${{ secrets.PRO_16_TOKEN }}
+          PAT: ${{ secrets.RPO_16_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
