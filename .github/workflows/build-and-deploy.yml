@@ -33,7 +33,7 @@ jobs:
 
       - name: Commit and push to dev
         env:
-          PAT: ${{ secrets.RPO_16_TOKEN }}
+          PAT: ${{ secrets.PRO_16_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
